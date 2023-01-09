@@ -1,0 +1,26 @@
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+
+  <% @users.each do |user| %><br>
+    <li>
+    <%= link_to user.user_name, user %>
+  </li>
+  <% end %><br>
+
+  <a>
+  <%= link_to "New User", new_user_path %>
+  </a>
+
+

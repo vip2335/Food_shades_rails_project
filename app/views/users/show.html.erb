@@ -1,0 +1,30 @@
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+
+
+<h1>Users</h1>
+    <h1>Name-<%= @user.user_name %></h1>
+    <h1>Email-<%= @user.user_email%></h1>
+    <h1>Phone-<%= @user.user_phone%></h1>
+    <h1>Address-<%=@user.user_address%></h1>
+
+
+<a>
+<%= link_to "Edit", edit_user_path(@user) %></li>
+  <%= link_to "Delete", user_path(@user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+</a>
