@@ -1,26 +1,14 @@
 
-<style>
-a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover, a:active {
-  background-color: red;
-}
-</style>
-
   <% @restaurants.each do |restaurant| %><br>
-    <h3>Name-<%= restaurant.res_name %></h3>
-    <h3>Email-<%= restaurant.res_menu%></h3>
-    <h3>Phone-<%= restaurant.res_address%></h3>
-    <h3>Address-<%=restaurant.phone%></h3>
+    <div class="card">
+    <div class="container">
+    <%= link_to restaurant.res_name, restaurant %>
+    <h3>Address-<%= restaurant.res_address%></h3>
+    <h3>Contact-<%=restaurant.phone%></h3>
+    </div>
+    </div>
   <% end %><br>
 
   <a>
-  <%= link_to "New User", new_user_path %>
+  <%= link_to "New Restaurant", new_restaurant_path %>
   </a>

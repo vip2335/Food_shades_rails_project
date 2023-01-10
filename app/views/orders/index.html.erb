@@ -1,0 +1,8 @@
+ <% @orders.each do |order| %><br>
+    <h3>Name-<%= order.name %></h3>
+    <h3>res-<%= order.res_name%></h3>
+  <% end %><br>
+
+  <a>
+  <%= link_to "Order", new_user_order_path %>
+  </a>
