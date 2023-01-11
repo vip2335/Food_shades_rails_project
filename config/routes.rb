@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'restaurants#index'
   resources :restaurants
+
+  #Logins Sessions 
+  get '/login',  to: 'logins#new'
+  post '/login',  to: 'logins#create'
+  delete '/logout', to: 'logins#destroy'
     resources :users do
       resources :orders
      end 

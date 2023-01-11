@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate
   def index
+
     @users = User.all
   end
 
@@ -13,12 +14,23 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to @user
-    else
-      render :new, status: :unprocessable_entity
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+    # @restaurants = Restaurant.all
+    # @user = User.new(user_params)
+    session[:user_id] = user.id
+
+    sessions[:user_id] = @user.id      
+      redirect_to '/restaurants'   
+    else      
+      redirect_to '/login'  
     end
+  
+    # if @user.save
+    #   redirect_to restaurants_url(@restaurants)
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   def edit
@@ -44,6 +56,9 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :user_email, :user_phone, :user_address)
+    params.require(:user).permit(:user_name, :user_email, :user_phone, :user_address, :password)
   end
+
+ 
+
 end

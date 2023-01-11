@@ -1,4 +1,23 @@
+<center><h1 style = "color:red"> Food Shades </h1></center>
 
+<ul>
+<li><a href="restaurants/new">Add Restaurant</a></li>
+<li><a href="users/new">Signup</a></li>
+<li><a href=>Login</a></li>
+<li><a href="#about">About us</a></li>
+</ul>
+</body>
+
+<center>
+<%= form_with model: @restaurant do |form| %>
+  <div class="container">
+<div>
+  <%= form.label :Search%> 
+  <%= form.search_field :res_name %><br>
+  </div>
+  </center>
+  
+<% end %>
   <% @restaurants.each do |restaurant| %><br>
     <div class="card">
     <div class="container">
