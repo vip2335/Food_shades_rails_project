@@ -1,4 +1,6 @@
-<%= form_with(url: login_path, scope: :login, local: true) do |f| %>
+
+<p id ="notice"><%=notice%></p>
+<%= form_with(url: login_path, model:@user,local: true) do |f| %>
     <div class = "container">
 
     <%= f.label :email %>
@@ -6,7 +8,7 @@
 
     <%= f.label :password %>
     <%= f.password_field :password %><br>
-<div class = "button">
+<div class = "button"> 
     <%= f.submit "Log in" %>
     </div>
     </div>

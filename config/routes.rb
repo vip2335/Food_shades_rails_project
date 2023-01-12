@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #Logins Sessions 
   get '/login',  to: 'logins#new'
   post '/login',  to: 'logins#create'
-  delete '/logout', to: 'logins#destroy'
+  get '/logout', to: 'logins#destroy'
     resources :users do
       resources :orders
      end 

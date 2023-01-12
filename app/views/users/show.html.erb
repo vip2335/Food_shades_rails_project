@@ -10,10 +10,10 @@
   <% end %>
   
 <h1>Users</h1>
-    <h1>Name-<%= @user.user_name %></h1>
-    <h1>Email-<%= @user.user_email%></h1>
-    <h1>Phone-<%= @user.user_phone%></h1>
-    <h1>Address-<%=@user.user_address%></h1>
+    <h1>Name-<%= @user.name %></h1>
+    <h1>Email-<%= @user.email%></h1>
+    <h1>Phone-<%= @user.phone%></h1>
+    <h1>Address-<%=@user.address%></h1>
 
 <a>
 <%= link_to "Edit", edit_user_path(@user) %></li>
