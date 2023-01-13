@@ -1,12 +1,33 @@
 <center><h1 style = "color:red"> Food Shades </h1></center>
 
+<% if logged_in? %> 
+<ul>
+<div class="dropdown">
+<button class="dropbtn"><%=current_user.name %> 
+  <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-content">
+  <a href="/users/<%=current_user.id %>">Profile</a>
+  <a href="/logout">Logout </a>
+</div>
+</div> 
+
+<li><a href="/users/<%=current_user.id %>/orders">My orders</a></li>
+<li><a href="/restaurants">Restaurant</a></li>
+<li><a href="#about">About us</a></li>
+
+</ul>
+
+<% else %>
+
 <ul>
 <li><a href="restaurants/new">Add Restaurant</a></li>
 <li><a href="users/new">Signup</a></li>
 <li><a href='/login'>Login</a></li>
 <li><a href="#about">About us</a></li>
 </ul>
-</body>
+
+<% end %>
 
 <center>
 <%= form_with model: @restaurant do |form| %>

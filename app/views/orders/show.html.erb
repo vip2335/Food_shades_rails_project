@@ -1,8 +1,11 @@
 
 <% @user.orders.each do |order| %>
     <p>
+    <div class = "container">
       <strong>Order:</strong>
       <%= order.name %><br>
-      <%= order.res_name%>
+      <%= order.res_name%><br>
+      <%= order.status%>
     </p>
+    </div>
     <% end %>

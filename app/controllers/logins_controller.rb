@@ -5,7 +5,7 @@ class LoginsController < ApplicationController
     end 
 
     def create
-      byebug
+   
         @user = User.find_by(email: user_params[:email])
         if @user && @user.authenticate(user_params[:password])
             session[:user_id] = @user.id 
@@ -17,7 +17,7 @@ class LoginsController < ApplicationController
     end 
     def destroy
       session[:user_id] = nil
-      redirect_to login_path
+      redirect_to restaurants_path
     end
     
 end

@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  #before_action :logged_in ,only: [:show]
   def index
     @restaurants = Restaurant.all
   end
@@ -44,5 +45,7 @@ private
   def restaurant_params
       params.require(:restaurant).permit(:res_name, :res_menu, :res_address, :phone)
     end
+
+  
 end
 
